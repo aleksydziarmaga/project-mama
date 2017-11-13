@@ -1,16 +1,13 @@
-import ReactDOM from 'react-dom'; 
 import React from 'react'; 
 import classNames from 'classnames'
 import './styles/index.css'; 
-import registerServiceWorker from './registerServiceWorker'; 
 
 
 class Login extends React.Component 
 { 
   render()
   { 
-    return 
-    ( 
+    return( 
     <div>
       <Header />
       <Form />
@@ -25,8 +22,7 @@ class Header extends React.Component
 { 
   render() 
   { 
-    return 
-    ( 
+    return( 
     <p className="red">Zaloguj się</p>
     ); 
   } 
@@ -49,16 +45,14 @@ class Form extends React.Component
 
   add() 
   {
-    this.setState
-    ({
+    this.setState({
     show:false
   });
 }
 
 remove() 
 {
-  this.setState
-  ({
+  this.setState({
   show:true
 });
 }
@@ -66,8 +60,7 @@ remove()
 
 render() 
 {
-  return
-  (
+  return(
   <div>
     <form id="form-size">
       <div className="form-group form-group--abs">
