@@ -1,3 +1,3 @@
 # project-mama
 
-(docs/Diagram.jpg)
+![Diagram](docs/Diagram.jpg)
