@@ -7,4 +7,6 @@
 
 ### Suggested changes
 1. Additional date/time fields for task list
-  * submition time, deadline, completion time
+	* submition time
+	* deadline
+	* completion time
