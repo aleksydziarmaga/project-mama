@@ -2,4 +2,9 @@
 
 ![Diagram](docs/Diagram.jpg)
 
+## Database project
 ![Diagram](docs/mamadb-schema.png)
+
+### Suggested changes
+1. Additional date/time fields for task list
+  a) submition time, deadline, completion time
