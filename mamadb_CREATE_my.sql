@@ -32,6 +32,6 @@ id          INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 author_id   INT UNSIGNED NOT NULL REFERENCES user(id),
 name        VARCHAR(20)  NOT NULL,
 description TEXT,
-state       ENUM('inactive', 'active', 'finished') NOT NULL DEFAULT 'inactive'
+state       ENUM('todo', 'inprogress', 'done') NOT NULL DEFAULT 'todo'
 );
 
