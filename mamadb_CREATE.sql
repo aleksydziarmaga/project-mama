@@ -12,14 +12,14 @@ mail     VARCHAR(30)  NOT NULL UNIQUE,
 password VARCHAR(30)  NOT NULL
 );
 
-CREATE TABLE category_user (
+CREATE TABLE users_categories (
 uid INT UNSIGNED NOT NULL REFERENCES users(id),
 cid INT UNSIGNED NOT NULL REFERENCES categories(id)
 );
 
 CREATE TABLE categories (
-id          INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name        VARCHAR(20)  NOT NULL UNIQUE
+id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30)  NOT NULL UNIQUE
 );
 
 CREATE TABLE tasks_categories (
@@ -30,7 +30,7 @@ cid INT UNSIGNED NOT NULL REFERENCES categories(id)
 CREATE TABLE tasks (
 id          INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 author_id   INT UNSIGNED NOT NULL REFERENCES user(id),
-name        VARCHAR(20)  NOT NULL,
+name        VARCHAR(30)  NOT NULL,
 description TEXT,
 state       ENUM('todo', 'inprogress', 'done') NOT NULL DEFAULT 'todo'
 );
