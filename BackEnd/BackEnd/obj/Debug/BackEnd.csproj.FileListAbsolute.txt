@@ -1,0 +1,9 @@
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\BackEnd.exe.config
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\BackEnd.exe
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\BackEnd.pdb
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\obj\Debug\BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\obj\Debug\BackEnd.exe
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\MySql.Data.dll
+C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\MySql.Data.xml
