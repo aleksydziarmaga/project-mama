@@ -7,3 +7,10 @@ C:\Users\Dzerry\source\repos\BackEnd\BackEnd\obj\Debug\BackEnd.exe
 C:\Users\Dzerry\source\repos\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
 C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\MySql.Data.dll
 C:\Users\Dzerry\source\repos\BackEnd\BackEnd\bin\Debug\MySql.Data.xml
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\bin\Debug\BackEnd.exe.config
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\obj\Debug\BackEnd.exe
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\bin\Debug\BackEnd.exe
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\bin\Debug\BackEnd.pdb
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\bin\Debug\MySql.Data.xml
+\\Pitagoras\Profile2_Studenci\alan.andrzejak\Pulpit\project-mama-backend\BackEnd\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
