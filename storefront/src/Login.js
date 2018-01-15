@@ -1,5 +1,8 @@
 import React from 'react'; 
 import classNames from 'classnames'
+import Option from 'muicss/lib/react/option';
+import Select from 'muicss/lib/react/select';
+
 import './styles/index.css'; 
 
 
@@ -16,8 +19,6 @@ class Login extends React.Component
   } 
 } 
 
-
-
 class Header extends React.Component 
 { 
   render() 
@@ -27,8 +28,6 @@ class Header extends React.Component
     ); 
   } 
 } 
-
-
 
 class Form extends React.Component
 {
@@ -66,7 +65,13 @@ render()
       <div className="form-group form-group--abs">
         <div className="rel">
           <input type="text" required/>
-          <label>login</label>
+          <label>imię</label>
+        </div>
+      </div>
+      <div className="form-group form-group--abs">
+        <div className="rel">
+          <input type="text" required/>
+          <label>nazwisko</label>
         </div>
       </div>
       <div className="form-group form-group--abs">
@@ -87,9 +92,20 @@ render()
           <label>e-mail</label>
         </div>
       </div>
+
+      <div className={classNames("form-group  form-group--abs", {"input-add":this.state.show})}>
+        <label className="option-label" for="option">kategoria:</label>  
+        <Select id="option" name="input" useDefault={true} defaultValue="option2">
+          <Option value="option1" label="Option 1" />
+          <Option value="option2" label="Option 2" />
+          <Option value="option3" label="Option 3" />
+          <Option value="option4" label="Option 4" />
+        </Select>
+
+      </div>
       <div className="mt">
-        <a className="btn btn-style" onClick={this.remove}>Zaloguj się</a>
-        <a className="btn btn-style" onClick={this.add}>Zarejestruj się</a>
+        <input type="submit" className="btn-style-prim" onClick={this.remove} value="Zaloguj się"/>
+        <input type="submit" className="btn-style-sec" onClick={this.add} value="Zarejestruj się"/>
       </div>
     </form>
   </div>
