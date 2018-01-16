@@ -16,6 +16,8 @@ db
     .catch(err => {
         console.error('Unable to connect to the database:', err);
     });
+    
+app.get('/', (req, res) => res.send('Hello'));
 
 app.use('/tasks', require('../src/routes/tasks'));
 
