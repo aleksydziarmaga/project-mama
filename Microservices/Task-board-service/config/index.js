@@ -17,6 +17,8 @@ db
         console.error('Unable to connect to the database:', err);
     });
 
+app.use('/tasks', require('../src/routes/tasks'));
+
 // Server start
 app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`)
