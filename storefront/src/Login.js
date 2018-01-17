@@ -2,8 +2,15 @@ import React from 'react';
 import classNames from 'classnames'
 import Option from 'muicss/lib/react/option';
 import Select from 'muicss/lib/react/select';
-
 import './styles/index.css'; 
+import Background from './background.png';
+
+var sectionStyle = {
+  width: "100%",
+  minHeight: "100vh",
+  backgroundImage: `url(${Background})`
+};
+
 
 
 class Login extends React.Component 
@@ -12,9 +19,20 @@ class Login extends React.Component
   { 
     return( 
     <div>
-      <Header />
-      <Form />
+     <section style={ sectionStyle } className="section">
+      <div className="logo">
+            <span className="red">M</span>
+            <span className="grey">A</span>
+            <span className="red">M</span>
+            <span className="grey">A</span>
+          </div>
+        <div className="block">
+          <Header />
+          <Form />
+        </div>
+      </section>
     </div>
+
     ); 
   } 
 } 
@@ -24,7 +42,7 @@ class Header extends React.Component
   render() 
   { 
     return( 
-    <p className="red">Zaloguj się</p>
+    <div className="red">Zaloguj się</div>
     ); 
   } 
 } 
@@ -61,7 +79,7 @@ render()
 {
   return(
   <div>
-    <form id="form-size">
+    <form className="form-size">
       <div className="form-group form-group--abs">
         <div className="rel">
           <input type="text" required/>
@@ -92,8 +110,8 @@ render()
           <label>e-mail</label>
         </div>
       </div>
-
-      <div className={classNames("form-group  form-group--abs", {"input-add":this.state.show})}>
+      {/*
+      <div className={classNames("form-group  form-group--abs form-group-mb", {"input-add":this.state.show})}>
         <label className="option-label" for="option">kategoria:</label>  
         <Select id="option" name="input" useDefault={true} defaultValue="option2">
           <Option value="option1" label="Option 1" />
@@ -101,9 +119,9 @@ render()
           <Option value="option3" label="Option 3" />
           <Option value="option4" label="Option 4" />
         </Select>
-
       </div>
-      <div className="mt">
+      */} 
+      <div>
         <input type="submit" className="btn-style-prim" onClick={this.remove} value="Zaloguj się"/>
         <input type="submit" className="btn-style-sec" onClick={this.add} value="Zarejestruj się"/>
       </div>
