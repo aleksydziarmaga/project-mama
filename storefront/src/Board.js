@@ -21,7 +21,7 @@ class Board extends Component {
             this.setState({tasks: newTasks})
         })
     }
-
+z
     render() {
         return (
             <div>

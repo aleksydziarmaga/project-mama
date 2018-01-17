@@ -6,6 +6,7 @@
     "bootstrap": "^4.0.0-beta",
     "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
+    "muicss": "^0.9.35",
     "node-sass": "^4.6.1",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
@@ -24,5 +25,8 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "image-webpack-loader": "^3.4.2"
   }
 }
