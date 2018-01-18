@@ -1,0 +1,37 @@
+DROP DATABASE IF EXISTS mama;
+SHOW WARNINGS;
+
+CREATE DATABASE mama;
+
+USE mama;
+
+CREATE TABLE users (
+id       INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name     VARCHAR(30)  NOT NULL UNIQUE,
+mail     VARCHAR(30)  NOT NULL UNIQUE,
+password VARCHAR(30)  NOT NULL
+);
+
+CREATE TABLE users_categories (
+uid INT UNSIGNED NOT NULL REFERENCES users(id),
+cid INT UNSIGNED NOT NULL REFERENCES categories(id)
+);
+
+CREATE TABLE categories (
+id   INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30)  NOT NULL UNIQUE
+);
+
+CREATE TABLE tasks_categories (
+tid INT UNSIGNED NOT NULL REFERENCES tasks(id),
+cid INT UNSIGNED NOT NULL REFERENCES categories(id)
+);
+
+CREATE TABLE tasks (
+id          INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+author_id   INT UNSIGNED NOT NULL REFERENCES user(id),
+name        VARCHAR(30)  NOT NULL,
+description TEXT,
+state       ENUM('todo', 'inprogress', 'done') NOT NULL DEFAULT 'todo'
+);
+
