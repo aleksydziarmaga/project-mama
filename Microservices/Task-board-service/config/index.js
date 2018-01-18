@@ -5,7 +5,7 @@ const db = require('../src/models/db');
 const config = require('./config');
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 
 app.use(express.json());
 app.use(cors());

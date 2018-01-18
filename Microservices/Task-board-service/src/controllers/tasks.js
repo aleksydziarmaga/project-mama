@@ -10,7 +10,7 @@ tasks.addTask = (req, res) => {
     })
         .then(task => {
             res.status(201);
-            res.send('ok');
+            res.send(task);
         })
         .catch(err =>{
             res.status(500);
