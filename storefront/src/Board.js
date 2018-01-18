@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import openSocket from 'socket.io-client';
+import api from './utils/api'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const socket = openSocket('http://localhost:4000');
@@ -14,14 +15,28 @@ class Board extends Component {
         this.state = {
             tasks: null
         }
-        
+        this.getTasks = this.getTasks.bind(this);
+
         addTask(task => {
             let newTasks = this.state.tasks;
             !newTasks ? newTasks =[task] : newTasks.push(task)
             this.setState({tasks: newTasks})
         })
-    }
 
+
+    }
+    componentDidMount() {
+        this.getTasks();
+    }
+    getTasks() {
+        api.fetchTasks()
+            .then(tasks => this.setState(() => {
+                return {
+                    tasks
+                }
+            }))
+            .catch(err => console.error(err));
+    }
     render() {
         return (
             <div>
