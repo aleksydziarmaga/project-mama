@@ -1,11 +1,13 @@
 const http = require('http');
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 const port = process.env.PORT || 4000;
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/tasks', async (req, res) => {
     try {
