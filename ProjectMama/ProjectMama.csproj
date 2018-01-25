@@ -88,24 +88,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginHandler.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Task.cs" />
-    <Compile Include="Models\TaskCategory.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserCategory.cs" />
     <Compile Include="MySqlConnectionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskHandler.cs" />
+    <Compile Include="RegistrationHandler.cs" />
     <Compile Include="UserHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

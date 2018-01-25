@@ -25,23 +25,23 @@ namespace ProjectMama.Controllers
         }
 
         // POST: api/User
-        public HttpResponseMessage Post([FromBody]User user)
+        public HttpResponseMessage Post([FromBody]User person)
         {
             UserHandler uh = new UserHandler();
-            uint id = uh.saveUser(user);
+            uint id = uh.saveUser(person);
 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
-            response.Headers.Location = new Uri(Request.RequestUri, String.Format("user/{0}", id));
+            response.Headers.Location = new Uri(Request.RequestUri, String.Format("person/{0}", id));
 
             return response;
         }
 
         // PUT: api/User/5
-        public HttpResponseMessage Put(uint id, [FromBody]User user)
+        public HttpResponseMessage Put(uint id, [FromBody]User person)
         {
             UserHandler uh = new UserHandler();
 
-            if (uh.updateUser(id, user))
+            if (uh.updateUser(id, person))
                 return Request.CreateResponse(HttpStatusCode.NoContent);
             else
                 return Request.CreateResponse(HttpStatusCode.NotFound);

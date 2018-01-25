@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.Globalization;
 
 using MySql.Data.MySqlClient;
+
+using ProjectMama.Models;
 
 namespace ProjectMama
 {
