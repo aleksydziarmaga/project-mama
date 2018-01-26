@@ -8,7 +8,7 @@
 ## User access
 ### Login
 Use ([server-address]/api/Login) to log in.  
-Body of the --post-- request is json data of the form:
+Body of the __post__ request is json data of the form:
 ```
 {
 "username": "[name or email]",
@@ -19,7 +19,7 @@ If credentials are correct, server will return true, false otherwise.
 
 ### Registration
 Use ([server-address]/api/Registration) to register a user.  
- --Post-- request with json data of the form:
+ __Post__ request with json data of the form:
 
 ```
 {
