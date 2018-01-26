@@ -7,7 +7,7 @@ class App extends Component {
   render() { 
     return ( 
     	<div>
-    	<Form />
+    	  {/* <Form /> */}
         <Board />
       </div>
       ); 

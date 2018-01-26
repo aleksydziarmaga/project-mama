@@ -13,7 +13,7 @@ class Board extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: null
+            tasks: ['cos, cosik']
         }
         this.getTasks = this.getTasks.bind(this);
 
@@ -22,10 +22,6 @@ class Board extends Component {
             !newTasks ? newTasks =[task] : newTasks.push(task)
             this.setState({tasks: newTasks})
         })
-<<<<<<< HEAD
-    }
-z
-=======
 
 
     }
@@ -41,10 +37,9 @@ z
             }))
             .catch(err => console.error(err));
     }
->>>>>>> cf2a9299347a51a7b066f08b80476296509bb122
     render() {
         return (
-            <div>
+            <div className='col-sm-5'>
                 {!this.state.tasks ? <p>Loading...</p> : <Tasks tasks={this.state.tasks} />}
             </div>
         )
@@ -55,7 +50,12 @@ const Tasks = ({tasks}) =>
     <div className='tasks-list'>
         {
             tasks.map(task => (
-               <div key={task.id} className='card'><div className='card-body'><h4 className='card-title'>{task.name}</h4> <p className='card-text'>description: {task.description}</p></div></div> 
+                <div key={task.id} className='card task'>
+                    <div className='card-body'>
+                        <h4 className='card-title'>{task.name}</h4>
+                        <p className='card-text'>description: {task.description}</p>
+                    </div>
+                </div> 
             ))
         }
     </div>
