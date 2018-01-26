@@ -7,26 +7,26 @@
 
 ## User access
 ### Login
-Use [server-address/api/Login] to log in.  
+Use ([server-address]/api/Login) to log in.  
 Body of the post request is json data of the form:
 ```
 {
-"username": "\[name or email\],
-"password": "\[passwd\]  
+"username": "[name or email]",
+"password": "[passwd]"  
 }
 ```
 
 If credentials are correct, server will return true, false otherwise.
 
 ### Registration
-Use [server-address/api/Registration] to log in.  
+Use ([server-address]/api/Registration) to log in.  
 Body of the post request is json data of the form:
 
 ```
 {
-"name": "\[name\],
-"mail": "\[mail\],
-"password": "\[passwd\]
+"name": "[name]",
+"mail": "[mail]",
+"password": "[passwd]"
 }
 ```
 
