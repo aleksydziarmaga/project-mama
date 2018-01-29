@@ -6,5 +6,10 @@ const fetchTasks = () => {
         .then((res) => res.data)
         .catch((err) => err);
 };
-
-export default {fetchTasks};
+const addTask = (data) => {
+    const URI = 'http://localhost:4000/tasks'
+    return axios.post(URI, data)
+        .then((res) => res.data)
+        .catch((err) => err);
+}
+export default {fetchTasks, addTask};

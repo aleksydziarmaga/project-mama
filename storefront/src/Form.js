@@ -4,6 +4,7 @@ import Option from 'muicss/lib/react/option';
 import Select from 'muicss/lib/react/select';
 import './styles/index.css'; 
 import Background from './background.png';
+import api from './utils/api'
 
 var sectionStyle = {
 	width: "100%",
@@ -13,6 +14,38 @@ var sectionStyle = {
 
 
 class Form extends Component { 
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: '',
+			description: ''
+		}
+
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleNameChange = this.handleNameChange.bind(this);
+		this.handleDescChange = this.handleDescChange.bind(this);
+		
+	}
+
+	handleSubmit(e) {
+		e.preventDefault()
+
+		const task = this.state;
+		task.author_id = 2;
+		api.addTask(task)
+			.then(res => console.log(res))
+			.catch(err => console.error(err));
+	}
+	handleNameChange(e) {
+		this.setState({
+			name: e.target.value
+		})
+	}
+	handleDescChange(e) {
+		this.setState({
+			description: e.target.value
+		})
+	}
 	render() { 
 		return ( 
 			<div>
@@ -24,15 +57,15 @@ class Form extends Component {
 						<span className="grey">A</span>
 					</div>
 					<div className="form-task">
-						<form>
+						<form onSubmit={this.handleSubmit}>
 							<div className="form-group form-group--abs">
 								<div className="rel">
-									<input type="text" required/>
+									<input type="text" required onChange={this.handleNameChange}/>
 									<label>Temat</label>
 								</div>
 							</div>
 							<div className="form-group">
-								<textarea className="text-field" name="comment"></textarea>
+								<textarea onChange={this.handleDescChange} className="text-field" name="comment"></textarea>
 							</div>
 							{/*
 							<div className="form-group  form-group--abs">
