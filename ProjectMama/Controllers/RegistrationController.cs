@@ -2,9 +2,11 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProjectMama.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RegistrationController : ApiController
     {
         // POST: api/Registration

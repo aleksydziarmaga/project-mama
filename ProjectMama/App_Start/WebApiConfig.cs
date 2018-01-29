@@ -12,8 +12,8 @@ namespace ProjectMama
             // Konfiguracja i usługi składnika Web API
 
             // Trasy składnika Web API
-            config.MapHttpAttributeRoutes();
-
+           // config.MapHttpAttributeRoutes();
+            config.EnableCors();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

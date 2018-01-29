@@ -3,11 +3,13 @@ using System.Collections;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 using ProjectMama.Models;
 
 namespace ProjectMama.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LoginInfo
     {
         public string username { get; set; }
