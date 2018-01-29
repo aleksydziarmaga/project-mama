@@ -37,6 +37,19 @@ app.post('/tasks', async (req, res) => {
         res.send(statusText)
     }
 });
+app.post('/register', async (req, res) => {
+    const body = req.body;
+    try {
+        const response = await axios.post('http://localhost:56364/api/Registration', body);
+        const { status, statusText} = response;
+        res.status(status);
+        res.send(statusText)
+    } catch (err) {
+        const { status, statusText } = err.response;
+        res.status(status);
+        res.send(statusText)
+    }
+})
 
 const server = http.createServer(app);
 const io = require('socket.io')(server);
