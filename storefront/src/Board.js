@@ -39,9 +39,13 @@ class Board extends Component {
     }
     render() {
         return (
-            <div className='col-sm-5'>
-                {!this.state.tasks ? <p>Loading...</p> : <Tasks tasks={this.state.tasks} />}
+          <div className="container">
+            <div className="row justify-content-md-center">
+                <div className='col-sm-5'>
+                    {!this.state.tasks ? <p>Loading...</p> : <Tasks tasks={this.state.tasks} />}
+                </div>
             </div>
+          </div>
         )
     }
 }
