@@ -185,12 +185,18 @@ body {
   margin-bottom:100px;
 }
 
+section{
+  position:relative;
+}
+
 .block{
   background-color: white;
   width:400px;
-  margin: 0 auto;
   padding:50px;
-  position:relative;
+  position:absolute;
+  top:5%;
+  left:50%;
+  transform:translate(-50%);
   border-radius: 20px;
   border:4px solid  #c2c2c2;
 }
@@ -198,7 +204,7 @@ body {
 .logo{
   float:right;
   padding:20px;
-  top: -50px;
+  top: 20px;
   padding: 10px 40px;
   font-size: 50px !important;
   font-weight: 500;
@@ -213,7 +219,4 @@ body {
 .logo .red{
   font-size: 50px !important;
   font-weight: 300 !important;
-}
-.section{
-  padding:50px 0;
 }

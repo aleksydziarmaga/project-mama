@@ -1,14 +1,13 @@
 import React from 'react'; 
 import classNames from 'classnames'
-import Option from 'muicss/lib/react/option';
-import Select from 'muicss/lib/react/select';
+
 import './styles/index.css'; 
 import Background from './background.png';
-
+import axios from 'axios';
 var sectionStyle = {
-  width: "100%",
-  minHeight: "100vh",
-  backgroundImage: `url(${Background})`
+width: "100%",
+minHeight: "100vh",
+backgroundImage: `url(${Background})`
 };
 
 
@@ -19,13 +18,13 @@ class Login extends React.Component
   { 
     return( 
     <div>
-     <section style={ sectionStyle } className="section">
-      <div className="logo">
-            <span className="red">M</span>
-            <span className="grey">A</span>
-            <span className="red">M</span>
-            <span className="grey">A</span>
-          </div>
+      <section style={ sectionStyle } className="section">
+        <div className="logo">
+          <span className="red">M</span>
+          <span className="grey">A</span>
+          <span className="red">M</span>
+          <span className="grey">A</span>
+        </div>
         <div className="block">
           <Header />
           <Form />
@@ -47,8 +46,8 @@ class Header extends React.Component
   } 
 } 
 
-class Form extends React.Component
-{
+class Form extends React.Component 
+{ 
   constructor(props) 
   {
     super(props);
@@ -75,60 +74,67 @@ remove()
 }
 
 
-render() 
-{
-  return(
-  <div>
-    <form className="form-size">
-      <div className="form-group form-group--abs">
-        <div className="rel">
-          <input type="text" required/>
-          <label>imię</label>
-        </div>
-      </div>
-      <div className="form-group form-group--abs">
-        <div className="rel">
-          <input type="text" required/>
-          <label>nazwisko</label>
-        </div>
-      </div>
-      <div className="form-group form-group--abs">
-        <div className="rel">
-          <input type="password" required/>
-          <label>hasło</label>
-        </div>
-      </div>
-      <div className={classNames("form-group form-group--abs", {"input-add":this.state.show})}>
-        <div className="rel">
-          <input type="password" required/>
-          <label>powtórz hasło</label>
-        </div>
-      </div>
-      <div className={classNames("form-group  form-group--abs", {"input-add":this.state.show})}>
-        <div className="rel">
-          <input type="e-mail" required/>
-          <label>e-mail</label>
-        </div>
-      </div>
-      {/*
-      <div className={classNames("form-group  form-group--abs form-group-mb", {"input-add":this.state.show})}>
-        <label className="option-label" for="option">kategoria:</label>  
-        <Select id="option" name="input" useDefault={true} defaultValue="option2">
-          <Option value="option1" label="Option 1" />
-          <Option value="option2" label="Option 2" />
-          <Option value="option3" label="Option 3" />
-          <Option value="option4" label="Option 4" />
-        </Select>
-      </div>
-      */} 
-      <div>
-        <input type="submit" className="btn-style-prim" onClick={this.remove} value="Zaloguj się"/>
-        <input type="submit" className="btn-style-sec" onClick={this.add} value="Zarejestruj się"/>
-      </div>
-    </form>
-  </div>
 
-  ); 
+state = {
+  name: '',
+  email: '',
+  password: ''
+}
+
+handleChange = event => {
+  this.setState({ name: event.target.value });
+  this.setState({ email: event.target.value });
+  this.setState({ password: event.target.value });
+}
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+const user = {
+  name: this.state.name,
+  email: this.state.email,
+  password: this.state.password
+};
+
+axios.post('http://localhost:56364/api/Registration', { user })
+  .then(res => {
+  console.log(res);
+  console.log(res.data);
+  })
+};
+
+render(){ 
+
+
+return(
+<div>
+  <form onSubmit={this.handleSubmit} className="form-size">
+    <div className="form-group form-group--abs">
+      <div className="rel">
+        <input name="name"   type="text" onChange={this.handleChange} required/>
+        <label>imię</label>
+      </div>
+    </div>
+    <div className="form-group form-group--abs">
+      <div className="rel">
+        <input type="text"   name="password" onChange={this.handleChange} required/>
+        <label>hasło</label>
+      </div>
+    </div>
+    <div className={classNames("form-group form-group--abs", {"input-add":this.state.show})}>
+      <div className="rel">
+        <input type="text" name="email" onChange={this.handleChange} required/>
+        <label>e-mail</label>
+      </div>
+    </div>
+    <div>
+      <input type="submit" className="btn-style-prim" onClick={this.remove} value="Zaloguj się"/>
+      <input type="submit" className="btn-style-sec"  onClick={this.add} value="Zarejetruj się"/>
+    </div>
+  </form>
+</div>
+
+); 
 }
 }
 
