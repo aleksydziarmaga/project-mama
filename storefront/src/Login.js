@@ -1,9 +1,9 @@
 import React from 'react'; 
 import classNames from 'classnames'
+import api from './utils/api'
 
 import './styles/index.css'; 
 import Background from './background.png';
-import axios from 'axios';
 var sectionStyle = {
 width: "100%",
 minHeight: "100vh",
@@ -53,10 +53,18 @@ class Form extends React.Component
     super(props);
     this.state = 
     {
-      show: true
+      show: true,
+      name: '',
+      email: '',
+      password: '',
     };
     this.add = this.add.bind(this);
     this.remove = this.remove.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   add() 
@@ -73,34 +81,27 @@ remove()
 });
 }
 
-
-
-state = {
-  name: '',
-  email: '',
-  password: ''
+handleNameChange (e) {
+  this.setState({ name: e.target.value });
 }
-
-handleChange = event => {
-  this.setState({ name: event.target.value });
-  this.setState({ email: event.target.value });
-  this.setState({ password: event.target.value });
+handleEmailChange (e) {
+  this.setState({ email: e.target.value });
 }
+handlePasswordChange (e) {
+  this.setState({ password: e.target.value });
+}
+handleSubmit (event) {
+  event.preventDefault();
 
-  handleSubmit = event => {
-    event.preventDefault();
-
-const user = {
-  name: this.state.name,
-  email: this.state.email,
-  password: this.state.password
+  const user = {
+    name: this.state.name,
+    email: this.state.email,
+    password: this.state.password
 };
 
-axios.post('http://localhost:56364/api/Registration', { user })
-  .then(res => {
-  console.log(res);
-  console.log(res.data);
-  })
+api.addUser(user)
+  .then(res => console.log(res))
+  .catch(e => console.error(e));
 };
 
 render(){ 
@@ -111,19 +112,19 @@ return(
   <form onSubmit={this.handleSubmit} className="form-size">
     <div className="form-group form-group--abs">
       <div className="rel">
-        <input name="name"   type="text" onChange={this.handleChange} required/>
+        <input name="name" type="text" onChange={this.handleNameChange} required/>
         <label>imię</label>
       </div>
     </div>
     <div className="form-group form-group--abs">
       <div className="rel">
-        <input type="text"   name="password" onChange={this.handleChange} required/>
+        <input type="password" name="password" onChange={this.handlePasswordChange} required/>
         <label>hasło</label>
       </div>
     </div>
     <div className={classNames("form-group form-group--abs", {"input-add":this.state.show})}>
       <div className="rel">
-        <input type="text" name="email" onChange={this.handleChange} required/>
+        <input type="email" name="email" onChange={this.handleEmailChange} required/>
         <label>e-mail</label>
       </div>
     </div>
