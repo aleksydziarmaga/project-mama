@@ -10,7 +10,11 @@ class App extends Component {
     	<Router>
         <div>
     	    <Route path='/tasks' component ={Form} />
-          <Route path='/board' component={Board}/>
+          <div className="container">
+            <div className="row justify-content-md-center">
+             <Route path='/board' component={Board}/>
+            </div>
+          </div>
         </div>
       </Router>
       ); 
