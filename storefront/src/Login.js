@@ -95,7 +95,7 @@ handleSubmit (event) {
 
   const user = {
     name: this.state.name,
-    email: this.state.email,
+    mail: this.state.email,
     password: this.state.password
 };
 
