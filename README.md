@@ -27,6 +27,16 @@ npm install
 npm start
 ```
 
+#### task-board-service
+Use __.env__ file to configure with-database connection between the task-board-service and database.  
+eg:  
+```
+DB_NAME=mama
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=
+```
+
 ## Usage
 ### Login/registration
 Access:  
