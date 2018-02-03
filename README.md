@@ -22,7 +22,7 @@ Open it in Visual Studio, compile and run.
 
 ### gateway, task-board-service, storefront
 ```
-cd \[PATH_TO_THE_PROJECT\]/\[service_name\]
+cd [PATH_TO_THE_PROJECT]/[PATH_TO_SERVICE]
 npm install
 npm start
 ```
