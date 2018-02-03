@@ -75,3 +75,13 @@ causes to add new user to mama database.
 	* deadline
 	* completion time
 
+## TODO
+### General
+* add user and task categories handling
+
+### Storefront
+* separate login and registration
+* add login
+
+### Login_registration
+* handle exceptions in case non-unique name / mail is passed.
