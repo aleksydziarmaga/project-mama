@@ -30,22 +30,22 @@ npm start
 ## Usage
 ### Login/registration
 Access:  
-(localhost:3000/login)  
+http://localhost:3000/login  
 Login is not avaiable yet.  
 To __register__ fill fields with __name__, __email__ and __password__ and click button "Zarejestruj sie".  
 Note: __name__ and __email__ strings __can't__ exist yet in the database in order to register the user.
 
 ### Adding tasks
-(localhost:3000/tasks)  
+http://localhost:3000/tasks  
 Fill name and description fields and click "Dodaj" in order to add the task to the database.
 
 ### Task list
-(localhost:3000/board)  
+http://localhost:3000/board  
 
 ## Service api
 ### Login_register
 #### login
-Use ([server-address]/api/Login) to log in.  
+Use http://[server-address]/api/Login to log in.  
 Body of the __post__ request is json data of the form:
 ```
 {
@@ -56,7 +56,7 @@ Body of the __post__ request is json data of the form:
 If credentials are correct, server will return true, false otherwise.
 
 #### Registration
-Use ([server-address]/api/Registration) to register a user.  
+Use http://[server-address]/api/Registration to register a user.  
  __Post__ request with json data of the form:
 
 ```
