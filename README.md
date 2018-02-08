@@ -69,7 +69,7 @@ Body of the __post__ request is json data of the form:
 ```
 If credentials are correct, server will return true, false otherwise.
 
-#### Registration
+#### User Registration
 Use http://[server-address]/api/Registration to register a user.  
  __Post__ request with json data of the form:
 
@@ -82,6 +82,18 @@ Use http://[server-address]/api/Registration to register a user.
 ```
 causes to add new user to mama database.
 
+#### Task Registration
+Use http://[server-address]/tasks to register a user.  
+ __Post__ request with json data of the form:
+
+```
+{
+"author_id": [author_id]
+"name": "[name]",
+"description": "[description]"
+}
+```
+causes to add new user to mama database.
 ## Suggested changes
 ### mamadb
 1. Additional date/time fields for task list
